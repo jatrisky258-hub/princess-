@@ -34,7 +34,7 @@ body {
 
 .slide.active {
     display: flex;
-    animation: fadeIn 1s ease;
+    animation: fadeIn .8s ease;
 }
 
 @keyframes fadeIn {
@@ -46,26 +46,26 @@ body {
     position: relative;
     z-index: 5;
     width: min(650px, 100%);
-    padding: 25px 12px;
+    padding: 20px 12px;
 }
 
 h1 {
     color: #ed4786;
-    font-size: clamp(34px, 7vw, 58px);
+    font-size: clamp(34px, 7vw, 55px);
     margin: 15px 0;
     text-shadow: 2px 3px white;
 }
 
 h2 {
-    font-size: clamp(25px, 5vw, 36px);
+    font-size: clamp(24px, 5vw, 34px);
     color: #d64c81;
     margin: 15px 0;
 }
 
 p {
     color: #81596d;
-    font-size: clamp(17px, 3.5vw, 23px);
-    line-height: 1.65;
+    font-size: clamp(17px, 3.5vw, 22px);
+    line-height: 1.5;
     margin: 12px auto;
 }
 
@@ -85,12 +85,12 @@ p {
 }
 
 .btn:hover {
-    transform: scale(1.08);
+    transform: scale(1.07);
 }
 
 .garden {
     background:
-        radial-gradient(ellipse at 50% 85%, #9bcf82 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 85%, #9bcf82, transparent 55%),
         linear-gradient(#b9e9ff, #edffda 65%, #8bc77d);
 }
 
@@ -98,53 +98,42 @@ p {
     position: absolute;
     top: 7%;
     right: 10%;
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
     background: #ffe58a;
     border-radius: 50%;
     box-shadow: 0 0 55px #ffe58a;
-    animation: glow 3s infinite alternate;
-}
-
-@keyframes glow {
-    to { transform: scale(1.12); }
 }
 
 .cloud {
     position: absolute;
     top: 15%;
-    font-size: 55px;
-    animation: cloud 15s infinite alternate ease-in-out;
+    font-size: 50px;
 }
 
 .cloud.one { left: 8%; }
 .cloud.two { right: 15%; top: 30%; }
 
-@keyframes cloud {
-    to { transform: translateX(40px); }
-}
-
 .grass {
     position: absolute;
     bottom: 0;
-    height: 19%;
+    height: 18%;
     width: 100%;
     background: linear-gradient(#8bc978, #5baf66);
     border-radius: 50% 50% 0 0;
 }
 
 .scene {
-    min-height: 190px;
+    min-height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
     margin: 20px auto;
-    position: relative;
 }
 
 .teddy {
-    font-size: clamp(75px, 15vw, 125px);
+    font-size: clamp(75px, 15vw, 120px);
     display: inline-block;
     animation: teddy 2s infinite ease-in-out;
     filter: drop-shadow(0 8px 8px #77504435);
@@ -172,13 +161,14 @@ p {
     position: fixed;
     font-size: 30px;
     pointer-events: none;
-    animation: fly 8s linear infinite;
+    animation: fly 9s linear infinite;
+    z-index: 3;
 }
 
 @keyframes fly {
-    0% { transform: translate(-10vw, 20vh) rotate(0); }
-    50% { transform: translate(50vw, -10vh) rotate(20deg); }
-    100% { transform: translate(110vw, 20vh) rotate(-15deg); }
+    0% { transform: translate(-10vw, 20vh); }
+    50% { transform: translate(50vw, -10vh); }
+    100% { transform: translate(110vw, 20vh); }
 }
 
 .petal {
@@ -200,7 +190,7 @@ p {
     background: #ffffffc9;
     border: 2px solid white;
     border-radius: 30px;
-    padding: 25px 18px;
+    padding: 22px 15px;
     box-shadow: 0 15px 35px #9b638522;
 }
 
@@ -221,7 +211,7 @@ p {
 }
 
 .crown {
-    font-size: 110px;
+    font-size: 105px;
     animation: crown 1.5s infinite alternate;
 }
 
@@ -230,7 +220,7 @@ p {
 }
 
 .gift {
-    font-size: 95px;
+    font-size: 90px;
     animation: teddy 1.5s infinite;
 }
 
@@ -239,24 +229,9 @@ p {
     animation: fadeIn 1s ease;
 }
 
-.floating {
-    position: fixed;
-    bottom: -40px;
-    z-index: 10;
-    pointer-events: none;
-    animation: floatUp 7s linear forwards;
-}
-
-@keyframes floatUp {
-    to {
-        transform: translateY(-110vh) rotate(350deg);
-        opacity: 0;
-    }
-}
-
 @media(max-width: 500px) {
-    .content { padding: 18px 8px; }
-    .scene { min-height: 150px; }
+    .content { padding: 15px 8px; }
+    .scene { min-height: 145px; }
     .sun { width: 65px; height: 65px; }
     .btn { font-size: 15px; }
 }
@@ -265,11 +240,10 @@ p {
 
 <body>
 
-<!-- BUTTERFLIES -->
 <div class="butterfly" style="top:35%;animation-delay:-2s;">🦋</div>
 <div class="butterfly" style="top:65%;animation-delay:-5s;">🦋</div>
 
-<!-- SLIDE 1: GARDEN ENTRANCE -->
+<!-- SLIDE 1: GARDEN -->
 <section class="slide garden active">
 
     <div class="sun"></div>
@@ -279,12 +253,12 @@ p {
 
     <div class="content">
 
-        <div style="font-size:65px;">🌸🌷🌼</div>
+        <div style="font-size:55px;">🌸🌷🌼</div>
 
         <h1>Happy Princess Day Meri Jaan 👑❤️</h1>
 
         <p>
-            Aaj ka poora garden sirf meri princess ke liye sajaya hai. 🥺
+            Aaj ka poora garden sirf meri princess ke liye hai. 🥺
         </p>
 
         <div class="scene">
@@ -293,11 +267,8 @@ p {
         </div>
 
         <div class="card">
-            <h2>Welcome to your little garden 🌹</h2>
-            <p>
-                Aaiye meri princess, aaj aapko
-                bahut saare surprises dene hain. 💗
-            </p>
+            <h2>Welcome Princess 🌹</h2>
+            <p>Aaiye meri jaan, aapke liye surprises hain! 💗</p>
         </div>
 
         <button class="btn" onclick="nextSlide()">
@@ -313,9 +284,9 @@ p {
 
     <div class="content">
 
-        <div style="font-size:45px;">🌷🌸🌹🌸🌷</div>
+        <div style="font-size:40px;">🌷🌸🌹</div>
 
-        <h1>For My Beautiful Princess 🌹</h1>
+        <h1>For My Princess 🌹</h1>
 
         <div class="scene">
             <span class="teddy">🧸</span>
@@ -326,15 +297,11 @@ p {
         <h2>Ye saare roses aapke liye! ❤️</h2>
 
         <p>
-            Ek rose aapki smile ke liye 🌹
-            <br>
-            Ek rose aapki cuteness ke liye 🌷
-            <br>
-            Aur poora bouquet aapke pyaar ke liye. 🥺
+            Aapke liye dher saare pyaare roses. 🥺
         </p>
 
         <button class="btn" onclick="nextSlide()">
-            Next surprise, Princess 👑
+            Next surprise 👑
         </button>
 
     </div>
@@ -354,12 +321,10 @@ p {
             <span class="teddy">🧸</span>
         </div>
 
-        <h2>Aap meri princess hain! 💗</h2>
+        <h2>Aap meri princess ho! 💗</h2>
 
         <p>
-            Aaj aapko officially princess crown pehnana hai.
-            <br>
-            Kyunki mere liye aap hamesha special hain. 🥰
+            Ye crown aapke liye, meri beautiful princess. 🥰
         </p>
 
         <button class="btn" onclick="nextSlide()">
@@ -375,7 +340,7 @@ p {
 
     <div class="content">
 
-        <h1>Come here meri jaan 🥺</h1>
+        <h1>Idhar aao meri jaan 🥺</h1>
 
         <div class="scene">
             <span class="teddy">🧸</span>
@@ -386,21 +351,18 @@ p {
         <h2>Ek tight wala huggg! ❤️</h2>
 
         <p>
-            Aapko apni baahon mein lekar
-            thodi der bas aise hi rehna hai.
-            <br>
-            No rush, no worries... bas aap aur main. 🥺
+            Bas aap aur main... 🥺💕
         </p>
 
         <button class="btn" onclick="nextSlide()">
-            One more surprise 💌
+            Last surprise 💌
         </button>
 
     </div>
 </section>
 
 
-<!-- SLIDE 5: SPECIAL LOVE NOTE -->
+<!-- SLIDE 5: FINAL CELEBRATION -->
 <section class="slide final">
 
     <div class="content">
@@ -409,35 +371,27 @@ p {
 
             <div style="font-size:85px;">💌</div>
 
-            <h1>My Princess ❤️</h1>
+            <h1>Happy Princess Day ❤️</h1>
 
             <div class="card">
 
-                <h2>Happy Princess Day! 👑</h2>
+                <h2>My Beautiful Princess 👑</h2>
+
+                <div class="scene">
+                    <span class="teddy">🧸</span>
+                    <span class="teddy">🧸</span>
+                </div>
 
                 <p>
-                    Aap meri life ki bahut special person hain.
-                    <br><br>
-
-                    Aapki smile, aapki hasi,
-                    aapki cute si baatein...
-                    mujhe sab bahut pyaari lagti hain. 💗
-                    <br><br>
-
-                    Kaash aaj main aapke saath is garden mein hota,
-                    aapko roses deta aur ek tight hug karta. 🫂
-                    <br><br>
-
-                    Hamesha khush rahiye meri jaan.
-                    Aap meri favourite princess hain. 🌹
+                    Aap bahut pyaari ho meri jaan. ❤️
+                    <br>
+                    Hamesha aise hi smile karte rehna. 🌹
                 </p>
 
             </div>
 
-            <h2>One last question... 🥺</h2>
-
             <button class="btn" onclick="finalYes()">
-                Aapki princess smile aa gayi ❤️
+                Aapki smile aa gayi ❤️
             </button>
 
         </div>
@@ -452,17 +406,14 @@ p {
             <h2>Happy Princess Day Meri Jaan! 💗</h2>
 
             <p>
-                Aapke liye infinite roses,
-                infinite hugs aur infinite kisses! 😘
+                Lots of roses, hugs and kisses! 😘
             </p>
 
             <div style="font-size:55px;">
                 💐🌹🫂💋💕
             </div>
 
-            <p>
-                Forever my favourite princess. 👑
-            </p>
+            <p>Forever my favourite princess. 👑</p>
 
         </div>
 
@@ -492,7 +443,7 @@ function nextSlide() {
 }
 
 
-// FALLING FLOWER PETALS
+// FALLING FLOWERS
 
 const petals = ["🌸", "🌹", "🌷", "💗", "✨"];
 
@@ -516,10 +467,10 @@ function createPetal() {
     setTimeout(() => p.remove(), 10000);
 }
 
-setInterval(createPetal, 700);
+setInterval(createPetal, 900);
 
 
-// PETAL BURST
+// FLOWER BURST
 
 function petalBurst() {
 
